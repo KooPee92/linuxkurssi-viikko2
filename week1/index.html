@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Administrator - Week 1</title>
+
+    <style>
+        body {
+            background-color: #101827;
+            color: #e5e7eb;
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 30px;
+        }
+
+        main {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #38bdf8;
+            text-align: center;
+        }
+
+        h2 {
+            color: #38bdf8;
+        }
+
+        section {
+            background-color: #1e293b;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        code {
+            color: #86efac;
+            background-color: #0f172a;
+            padding: 4px 8px;
+            border-radius: 5px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 40px;
+        }
+        .week-links {
+            text-align: center;
+            margin: 20px 0 30px 0;
+        }
+
+        .week-button {
+            display: inline-block;
+            background-color: #0284c7;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            text-decoration: none;
+         }
+
+         .week-button:hover {
+             background-color: #0369a1;
+         }
+
+
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <h1>My Linux Server</h1>
+    <p style="text-align:center;">
+        Welcome to my Linux Administrator Week 1 project!
+    </p>
+    <div class="week-links">
+        <a class="week-button" href="/viikko2/">
+            Go to Week 2
+        </a>
+
+        <a class="week-button"
+           href="https://github.com/KooPee92/linuxkurssi-viikko2"
+           target="_blank" rel="noopener noreferrer">
+            Week 2 GitHub
+        </a>
+     </div>
+
+    <section>
+        <h2>1. Linux distribution and version</h2>
+
+        <p>
+            I installed Ubuntu 26.04.1 LTS (Resolute Raccoon)
+            on a virtual machine using CSC cPouta.
+        </p>
+    </section>
+
+    <section>
+        <h2>2. What is Nginx?</h2>
+
+        <p>
+       	 Nginx is a web server program. I installed it on my Ubuntu server so I can show my website on the internet.
+	 When someone opens my server's IP address in a browser, Nginx sends the web page to them.    
+        </p>
+    </section>
+
+    <section>
+        <h2>3. Which commands did I use?</h2>
+
+        <ul>
+            <li>
+   		 <code>cat /etc/os-release</code><br>
+   		 Shows the Linux distribution and version.
+            </li>
+
+
+            <li>
+                <code>sudo apt update</code><br>
+                Updates the package list.
+            </li>
+
+            <li>
+                <code>sudo apt install nginx</code><br>
+                Installs the Nginx web server.
+            </li>
+            <li>
+                <code>sudo systemctl status nginx</code><br>
+                Checks if Nginx is running.
+            </li>
+
+            <li>
+                <code>sudo systemctl enable nginx</code><br>
+                Enables Nginx to start automatically after reboot.
+            </li>
+        </ul>
+    </section>
+<section>
+    <h2>4. Other Linux commands I used</h2>
+
+    <p>
+        I also used these commands while setting up my Linux server.
+    </p>
+
+    <ul>
+        <li>
+            <code>sudo apt upgrade</code><br>
+            Installs available system updates.
+        </li>
+
+        <li>
+            <code>uname -r</code><br>
+            Shows the Linux kernel version.
+        </li>
+
+        <li>
+            <code>sudo reboot</code><br>
+            Restarts the Linux server.
+        </li>
+
+        <li>
+            <code>sudo systemctl is-enabled nginx</code><br>
+            Checks if Nginx starts automatically.
+        </li>
+
+        <li>
+            <code>ls -l /var/www/html</code><br>
+            Shows the files in my website folder.
+        </li>
+
+        <li>
+            <code>sudo nano /var/www/html/index.html</code><br>
+            Opens my website file for editing.
+        </li>
+    </ul>
+</section>
+    <footer>
+        Linux Administrator Course | Week 1 | CSC cPouta
+    </footer>
+
+</main>
+
+</body>
+</html>
