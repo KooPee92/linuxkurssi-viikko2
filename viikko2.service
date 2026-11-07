@@ -1,0 +1,16 @@
+[Unit]
+Description=Linux Administrator Week 2 Flask Application
+After=network.target mariadb.service
+Requires=mariadb.service
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/viikko2
+Environment="PATH=/home/ubuntu/viikko2/.venv/bin"
+ExecStart=/home/ubuntu/viikko2/.venv/bin/gunicorn --bind 127.0.0.1:8000 app:app
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
