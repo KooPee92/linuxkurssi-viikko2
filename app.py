@@ -163,9 +163,21 @@ def home():
             <div class="card">
                 <h2>4. Restart Test</h2>
                 <p>
-                    Restart test has not been completed yet.
+                    I restarted my Ubuntu virtual machine to test
+                    the database and automatic service startup.
                 </p>
-            </div>
+                <p>
+                    Nginx, Flask (Gunicorn) and MariaDB started
+                    automatically after the reboot.
+                </p>
+                <p>
+                    The visitor counter was 25 before the restart
+                    and remained 25 after the restart.
+                </p>
+                <p style="color: #4ade80;">
+                    Restart test completed successfully!
+                </p>
+             </div>
 
         </div>
     </body>
