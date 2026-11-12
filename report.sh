@@ -20,6 +20,7 @@ check_disk_status() {
     fi
 }
 
+
 # Remove the % character
 DISK_PERCENT=${DISK_USAGE%\%}
 
