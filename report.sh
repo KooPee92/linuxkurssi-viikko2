@@ -42,8 +42,14 @@ echo "Available RAM: $MEM_AVAILABLE MiB"
 # Generate HTML report
 OUTPUT_FILE="/var/www/html/viikko3/index.html"
 
+# Create a temporary file for the report
+TEMP_FILE=$(mktemp "${OUTPUT_FILE}.tmp.XXXXXX")
 
-cat > "$OUTPUT_FILE" <<EOF
+# Remove temporary file if the script exits
+trap 'rm -f "$TEMP_FILE"' EXIT
+
+cat > "$TEMP_FILE" <<EOF
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,5 +204,9 @@ cat > "$OUTPUT_FILE" <<EOF
 </html>
 EOF
 
+
+# Set permissions and replace the old report
+chmod 644 "$TEMP_FILE"
+mv -f "$TEMP_FILE" "$OUTPUT_FILE"
 
 echo "HTML report generated: $OUTPUT_FILE"
