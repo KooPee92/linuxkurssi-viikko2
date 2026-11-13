@@ -134,6 +134,17 @@ cat > "$TEMP_FILE" <<EOF
             color: #f87171;
             font-weight: bold;
         }
+
+        code {
+            display: inline-block;
+            background-color: #0f172a;
+            color: #86efac;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
     </style>
 </head>
 
@@ -149,7 +160,7 @@ cat > "$TEMP_FILE" <<EOF
         <div class="links">
             <a class="button" href="/">Back to Week 1</a>
 
-            <a class="button" href="/viikko2/">Go to Week 2</a>
+            <a class="button" href="/viikko2/">Back to Week 2</a>
 
             <a class="button"
                href="https://github.com/KooPee92/linuxkurssi"
