@@ -3,7 +3,7 @@
 # Week 3 - Server status report
 
 # Collect server information
-GENERATED_AT=$(date '+%Y-%m-%d %H:%M:%S %Z %z')
+GENERATED_AT=$(TZ=Europe/Helsinki date '+%Y-%m-%d %H:%M:%S %Z %z')
 UPTIME_TEXT=$(uptime -p)
 DISK_USAGE=$(df -P / | awk 'NR==2 {print $5}')
 MEM_TOTAL=$(free -m | awk '/^Mem:/ {print $2}')
@@ -40,7 +40,7 @@ echo "Available RAM: $MEM_AVAILABLE MiB"
 
 
 # Generate HTML report
-OUTPUT_FILE="$HOME/viikko3/index.html"
+OUTPUT_FILE="/var/www/html/viikko3/index.html"
 
 
 cat > "$OUTPUT_FILE" <<EOF
