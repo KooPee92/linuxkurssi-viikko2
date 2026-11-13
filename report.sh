@@ -199,6 +199,187 @@ cat > "$TEMP_FILE" <<EOF
             </table>
         </div>
 
+        <div class="card">
+            <h2>2. Commands Used</h2>
+
+            <p>
+                <code>date</code><br>
+                Displays the current date, time and time zone.
+            </p>
+
+            <p>
+                <code>uptime -p</code><br>
+                Shows how long the Linux server has been running.
+            </p>
+
+            <p>
+                <code>df -P / | awk 'NR==2 {print \$5}'</code><br>
+                Uses piping to extract the root disk usage percentage.
+            </p>
+
+            <p>
+                <code>free -m</code><br>
+                Displays RAM information in MiB.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>3. How the Script Works</h2>
+
+            <p>
+                I created a Bash script that collects information
+                about my Linux server.
+            </p>
+
+            <p>
+                The script uses Linux commands and stores their
+                results in variables.
+            </p>
+
+            <p>
+                A function checks the disk usage.
+                If the usage is below 80%, the status is OK.
+                If it is 80% or higher, the status is WARNING.
+            </p>
+
+            <p>
+                The script generates an HTML report using
+                a temporary file and then replaces the old report.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>4. Cron Scheduling</h2>
+
+            <p>
+                I used Cron to update the server status
+                report automatically every minute.
+            </p>
+
+            <p>
+                The Cron job runs my Bash script and
+                generates a new HTML report.
+            </p>
+
+            <p>
+                I configured the schedule using
+                <code>crontab -e</code>.
+            </p>
+
+            <p>
+                The schedule uses five asterisks (* * * * *),
+                which means the script runs every minute.
+            </p>
+
+            <p>
+                Cron starts automatically when the server
+                boots, so the report continues updating
+                after a restart.
+            </p>
+        </div>
+        <div class="card">
+            <h2>5. Test Results</h2>
+
+            <h3>Disk Space Status Tests</h3>
+
+            <p>
+                I tested the disk status function using
+                different usage percentages.
+            </p>
+
+            <table>
+                <tr>
+                    <th>Disk Usage</th>
+                    <th>Expected</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>50%</td>
+                    <td>OK</td>
+                    <td class="status-OK">OK</td>
+                </tr>
+                <tr>
+                    <td>80%</td>
+                    <td>WARNING</td>
+                    <td class="status-WARNING">WARNING</td>
+                </tr>
+                <tr>
+                    <td>90%</td>
+                    <td>WARNING</td>
+                    <td class="status-WARNING">WARNING</td>
+                </tr>
+            </table>
+
+            <p>
+                All three tests passed successfully.
+            </p>
+
+            <h3>Automatic Updates</h3>
+
+            <p>
+                I tested the Cron schedule by checking
+                the report generation time.
+            </p>
+
+            <p>
+                First update: 10:35:01 EET<br>
+                Second update: 10:37:01 EET
+            </p>
+
+            <p>
+                The report updated automatically
+                without running the script manually.
+            </p>
+
+            <h3>Restart Test</h3>
+
+            <p>
+               I restarted my Ubuntu virtual machine
+               to test the automatic Cron updates.
+            </p>
+
+            <p>
+               Cron, Nginx, MariaDB and Flask started
+               automatically after the reboot.
+            </p>
+
+            <p>
+               Server started: 11:35:19 EET<br>
+               First report update: 11:36:01 EET
+            </p>
+
+            <p style="color: #4ade80;">
+               Restart test completed successfully!
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>6. What I Learned</h2>
+
+            <p>
+                I learned how to use Bash scripts and Cron
+                to automate tasks on my Linux server.
+            </p>
+
+            <p>
+                One thing I learned was how Linux file
+                permissions affect automatic tasks.
+            </p>
+
+            <p>
+                The website files were originally owned by root.
+                I changed the ownership of the Week 3 website
+                directory and HTML file to the ubuntu user.
+            </p>
+
+            <p>
+                This allows Cron to update the website
+                automatically without using sudo.
+            </p>
+        </div>
+
+
+
     </div>
 </body>
 </html>
