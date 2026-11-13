@@ -129,9 +129,13 @@ def home():
                 <a class="button" href="/">
                     Back to Week 1
                 </a>
+                
+                <a class="button" href="/viikko3/">
+                    Go to Week 3
+                </a>
 
                 <a class="button"
-                   href="https://github.com/KooPee92/linuxkurssi-viikko2"
+                   href="https://github.com/KooPee92/linuxkurssi"
                    target="_blank" rel="noopener noreferrer">
                     View on GitHub
                 </a>
